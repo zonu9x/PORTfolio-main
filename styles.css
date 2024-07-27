@@ -231,7 +231,7 @@ nav h1:hover{
 
 .about-text {
     margin-bottom: 15px;
-    align-item: justify;
+    text-align: justify;
 }
 
 .icons {
