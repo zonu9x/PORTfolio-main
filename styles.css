@@ -1,0 +1,885 @@
+/* import font family from google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* tells browser to account for any border & padding in the values you specify for an element's width & height */
+    scroll-behavior: smooth;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background: #000000;
+    color: #faf3f3;
+    overflow-x: hidden;
+}
+
+ /* #header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/Head2.jpeg);
+    background-size: cover;
+    background-position: center; 
+}  */
+
+/* ------------------- NAVBAR ---------------------- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 8%;
+    background-color: rgb(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1; /* places navbar over all other elements when scrolling */
+    top: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+}
+nav ul li a :hover{
+    color: rgb(245, 0, 0);
+}
+
+/* creates red underline effect */
+nav ul li a::after {
+    border: none;
+    border-color: #ff0000;
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.4s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: rgb(255, 238, 0);
+}
+nav h1{
+    color: #ff0000;
+    font-size: xx-large;
+    font-family:sans-serif;
+    
+}
+nav h1:hover{
+    color: rgb(255, 255, 255);
+    
+}
+
+.scroll-watch{
+    height: 3px;
+    background-color: yellow;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    scale: 0 1;
+    animation: scroll-watch linear;
+    animation-timeline: scroll();
+}
+@keyframes scroll-watch {
+    to {scale: 1 1; }
+}
+
+/* --------------------- INTRO SECTION ------------------------- */
+#intro {
+    display: block;
+}
+
+.intro-container {
+    padding: 15%;
+    background-image: url(images/wallhaven-yxvqdd.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.left-intro {
+    font-size: 30px;
+    padding: 0 0 0 13%;
+    width: 100%;
+    flex-basis: 60%;
+}
+
+.left-intro h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.left-intro h1 span {  
+    text-shadow: 3px 5px 2px #5f1e1e;
+    color: #ff0000;
+} 
+
+.left-intro a {
+    margin-top: 30px;
+    display: inline-block;
+    border-radius: 6px;
+    border: 2px solid red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.left-intro .cv-btn {
+    background-color: red;
+    color: white; 
+    border: 2px solid red;
+}
+
+.left-intro a:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.left-intro .cv-btn:hover {
+    background-color: rgb(230, 111, 111);
+    color: rgb(0, 0, 0);
+}
+
+/*.right-intro img {
+    flex-basis: 35%;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 100px;
+    background-color: white;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    padding: 8% 0 0 13%;
+}
+
+/* ------------------------ ABOUT ME SECTION --------------------------- */
+#about {
+    padding: 165px 0;
+    color: #ababab;
+    display: block;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 95%;
+    padding-left: 10%;
+    height: 600px;
+    border-radius: 16px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.sub-title1 {
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.sub-title1::before {
+    content: "";
+    position: absolute;
+    left: 20%;
+    bottom: 16px;
+    width: 200px;
+    height: 14px;
+    transform: skew(-12deg) translateX(-50%);
+    background: rgba(255, 0, 0);
+    z-index: -1;
+  }
+
+.text-box {
+    margin-bottom: 20px;
+    margin-right: 80px;
+}
+
+.about-text {
+    margin-bottom: 15px;
+}
+
+.icons {
+    font-size: 35px;
+    text-decoration: none;
+    color: yellow;
+    margin: 20px;
+    transition: transform 0.5s;
+    display: inline-block;
+}
+
+.icons:hover {
+    color: white;
+    transform: translateY(-5px);
+    transition: 0.7s;
+}
+
+
+/* services section, not finished
+#services {
+    padding: 30px 0;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+*/
+
+/* -------------------- PORTFOLIO SECTION ------------------ */
+#portfolio {
+    padding: 120px 150px 150px 150px;
+    background-image: url(images/@WallPaper_PC\ \(1451\).jpg );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+   
+}
+
+.sub-title2 {
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+}
+
+.sub-title2::before {
+    content: "";
+    position: absolute;
+    left: 12%;
+    bottom: 16px;
+    width: 200px;
+    height: 14px;
+    transform: skew(-12deg) translateX(-50%);
+    background: rgba(255, 0, 0);
+    z-index: -1;
+  }
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    
+}
+
+.work {
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0 4px 4px white;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+}
+
+.work img {
+    display: block;
+    background-position: center;
+    
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+    transition: transform 0.5s;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+.layer {
+    width: 100%;
+    height: 0; /* zero height hides hover effect over portfolio projects */
+    background: linear-gradient(rgba(0, 0, 0, 0.75), red);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: rgb(255, 255, 5);
+}
+
+.layer p {
+    color: rgb(221, 221, 221);
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #ff004f;
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 60px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.layer a:hover {
+    background-color: yellow;
+    transition: 0.5s ease-in-out;
+}
+
+/* --------------------- SKILLS SECTION ---------------------- */
+#skills {
+    padding: 100px 150px 150px 150px;
+}
+
+.sub-title4 {
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.sub-title4::before {
+    content: "";
+    position: absolute;
+    left: 8%;
+    bottom: 16px;
+    width: 100px;
+    height: 14px;
+    transform: skew(-12deg) translateX(-50%);
+    background: rgba(255, 0, 0);
+    z-index: -1;
+}
+
+.front-end h2, .back-end h2, .other h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: yellow;
+}
+
+.skill-container1 {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    justify-content: center;
+    padding: 16px 200px 16px 16px;
+}
+
+.skill-container2 {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    justify-content: center;
+    padding: 16px 200px 16px 16px;
+}
+
+.skill-container3 {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    justify-content: center;
+    padding: 16px 200px 16px 16px;
+}
+
+.skill-box {
+    padding: 5px;
+    cursor: pointer;
+    color: #ddd;
+    margin-left: 140px;
+}
+
+.skill-box:hover > .skill-title::after, .skill-box:hover > .skill-title::before {
+    width: 35px;
+}
+
+.skill-box:hover .img {
+    transform: translateY(-10px);
+}
+
+.skill-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 0;
+    justify-content: right;
+}
+
+.skill-title h4 {
+    margin: 15px 15px 5px 15px;
+    color: white;
+    justify-content: right;
+    font-size: 13px;
+}
+
+.skill-title::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background: rgba(255, 0, 0);
+    transition: 0.5s;
+}
+
+.skill-title::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    border-radius: 2px 0 0 2px;
+    background: rgba(255, 0, 0);
+    transition: 0.5s;
+}
+
+.img {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 45px;
+    background-color: rgb(255, 255, 255);
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.skill-icon {
+    width: 30px;
+}
+
+/* --------------------- CONTACT SECTION --------------------- */
+#contact {
+    padding: 110px 150px 200px 150px;
+    background-image: url(https://media1.giphy.com/media/KRw9s05Pq2Kk0/giphy.webp?cid=ecf05e47x0vnj8qjel2lh48becoo8u86el7jouyw9oidnsao&rid=giphy.webp&ct=g);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sub-title3 {
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+}
+
+.sub-title3::before {
+    content: "";
+    position: absolute;
+    left: 48%;
+    bottom: 16px;
+    width: 270px;
+    height: 14px;
+    transform: skew(-12deg) translateX(-50%);
+    background: rgba(255, 0, 0);
+    z-index: -1;
+  }
+
+.contact-left {
+    flex-basis: 35%;
+}
+.phone-num a {
+    text-decoration: none;
+    color: white;
+}
+
+.phone-num a:hover {
+    color: yellow;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    color: red;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.submit-btn {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    transition: 0.4s;
+    border: none;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    transform: translateY(3px);
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.submit-btn:active {
+    background-color: #f63333;
+    color: rgb(255, 255, 255);
+    transform: translateY(5px);
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn {
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 14px 60px;
+}
+
+#msg {
+    color: #61b752;
+    margin-top: -80px;
+    display: block;
+}
+
+/* ------------------ FOOTER ---------------- */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: #000000;
+    font-weight: 300;
+    border-top: 1px solid rgb(0, 0, 0);
+    box-shadow: 1px -2px 8px gray;
+}
+
+/* -------------------CSS for smaller screens (mobile) ------------------ */
+nav .fas {
+    display: none; /* hides menu and close icons while on desktop */
+}
+
+@media only screen and (max-width: 1008px) {
+
+    /* --------- NAVBAR -------- */
+    nav .fas {
+        display: block;
+        font-size: 25px;
+    }
+    nav .fas:hover {
+        color: yellow;
+    }
+    nav ul {
+        background: rgb(255, 78, 78);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.75s;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    nav ul .fas:hover {
+        color: yellow;
+    }
+
+    /* ---------- INTRO SECTION --------- */
+    #intro {
+        display: block;
+        background-image: url(images/20230412113851_IMG_2170.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        width: 100%;
+        height: 100vh;
+    }
+    .position {
+        padding-top: 240px;
+        font-size: 16px;
+    }
+    .left-intro h1 {
+        font-size: 30px;
+    }
+    .sub-title1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .sub-title1::before {
+        content: "";
+        position: absolute;
+        left: 25%;
+        bottom: 8px;
+        width: 150px;
+        height: 14px;
+        transform: skew(-12deg) translateX(-50%);
+        background: rgba(255, 0, 0);
+        z-index: -1;
+    }
+    .intro-container {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* ----------- ABOUT SECTION ----------- */
+    #about {
+        padding: 100px 0;
+    }
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+    }
+    .about-col-1 {
+        margin-bottom: 25px;
+        padding: 0 20px;
+    }
+    .about-col-1 img {
+        width: 360px;
+        height: 360px;
+    }
+    .about-col-2 {
+        font-size: 14px;
+        padding: 30px;
+    }
+    .sub-title2 {
+        font-size: 40px;
+        font-weight: 600;
+        color: white;
+        position: relative;
+    }
+    .sub-title2::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 11px;
+        width: 130px;
+        height: 14px;
+        transform: skew(-12deg) translateX(-50%);
+        background: rgba(255, 0, 0);
+        z-index: -1;
+    }
+
+    /* ------- PORTFOLIO SECTION -------- */
+    #portfolio {
+        padding: 100px 150px 150px 150px;
+        background-image: url(images/me-1.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .sub-title2 {
+        font-size: 40px;
+        font-weight: 600;
+        color: white;
+        position: relative;
+        justify-content: center;
+        display: flex;
+    }
+    .sub-title2::before {
+        content: "";
+        position: absolute;
+        left: 56%;
+        bottom: 9px;
+        width: 130px;
+        height: 14px;
+        transform: skew(-12deg) translateX(-50%);
+        background: rgba(255, 0, 0);
+        z-index: -1;
+      }
+    .work-list {
+        justify-content: center;
+        width: 100%;
+    }
+    .layer {
+        padding: 0 20px;
+        font-size: 14px;
+        transition: height 0.5s;
+    }
+    .layer h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .layer p {
+        font-size: 12px;
+    }
+    .layer a {
+        margin-top: 20px;
+        color: #ff004f;
+        font-size: 18px;
+        text-decoration: none;
+        line-height: 40px;
+        background: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    /* ------- SKILLS SECTION -------- */
+    #skills {
+        width: 100%;
+        justify-content: center;
+        padding: 100px 0;
+    }
+    .sub-title4 {
+        font-size: 40px;
+        font-weight: 600;
+        color: white;
+        position: relative;
+        display: flex;
+        margin-bottom: 40px;
+        justify-content: center;
+    }
+    .sub-title4::before {
+        content: "";
+        position: absolute;
+        left: 54%;
+        bottom: 9px;
+        width: 70px;
+        height: 14px;
+        transform: skew(-12deg) translateX(-50%);
+        background: rgba(255, 0, 0);
+        z-index: -1;
+    }
+    .front-end h2, .back-end h2, .other h2 {
+        display: flex;
+        justify-content: center;
+        font-size: 19px;
+        color: yellow;
+    }
+    .skill-container1 {
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        justify-content: center;
+        padding: 16px 200px 16px 16px;
+        margin-bottom: 20px;
+    }
+    .skill-container2 {
+        margin-bottom: 20px;
+    }
+   
+    /* ------- CONTACT SECTION ------- */
+    #contact {
+        justify-content: center;
+        background-image: url(https://media3.giphy.com/media/QWFP5vFLojlXuLtwl6/200w.webp?cid=ecf05e478glewq25uqa7yvz0ic7a1nwjendfjordppqzd9ou&rid=200w.webp&ct=g);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+    }
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+    .contact-right {
+        margin-top: 20px;
+    }
+    .sub-title3 {
+        font-size: 32px;
+        font-weight: 600;
+        color: white;
+        position: relative;
+    }
+    .sub-title3::before {
+        content: "";
+        position: absolute;
+        left: 55%;
+        bottom: 7px;
+        width: 140px;
+        height: 14px;
+        transform: skew(-12deg) translateX(-50%);
+        background: rgba(255, 0, 0);
+        z-index: -1;
+      }
+      .email-icon, .phone-num {
+        font-size: 12px;
+    }
+    .contact-left p i {
+        font-size: 18px
+    }
+}
